@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+str="자바프로그램, Like father, like son.";
+result=str.match(/Like/ig); //  i대소문자 무시, g전역탐색
+document.write(result+"<br>");
+result=str.replace("자바","java");//replace(A,B) A를 B로 바꾸기
+document.write(result+"<br>");
+str="one two three four five";
+array=str.split(" ");//split("구분자") 구분자를 기준으로 배열 생성. 여기선 스페이스바 1개가 구분자가 됨.
+for(var s in array)
+	document.write(array[s]+"<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

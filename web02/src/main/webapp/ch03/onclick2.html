@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function change1(){
+	document.body.style.backgroundImage="url('../images/fall.jpg')";
+}
+function change2(){
+	document.body.style.backgroundImage="url('../images/winter.jpg')";
+}
+function change(img){
+	document.body.style.backgroundImage="url("+img+")";
+}
+</script>
+</head>
+<body>
+<h2>배경이미지 바꾸기</h2>
+<input type="button" value="배경1" onclick="change('../images/fall.jpg');">
+<input type="button" value="배경2" onclick="change('../images/winter.jpg');">
+</body>
+</html>

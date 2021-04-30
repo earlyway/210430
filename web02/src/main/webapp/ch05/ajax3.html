@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js">
+</script>
+<script>
+function check(){
+	var search=document.form1.search.value;
+	if(search==""){
+		alert("키워드를 입력하세요");
+		document.form1.search.focus();
+		return;
+	}
+	document.form1.submit();
+}
+$(function(){//페이지 로딩이 끝난후 자동으로 실행되는 함수
+	$("#search").keyup(function(){//id가 search인 태그에 키입력 이벤트가 발생하면
+		var search=$("#search").val();//태그에 입력한 값
+		if(search.length==0){//글자수가 0이면
+			$("#div1").css("visibility","hidden");//div태그를 숨김
+		}else{
+			$("#div1").css("visibility","visible");//div태그를 표시
+			$.ajax({
+				url:"result3.jsp",
+				data:"search="+search,
+				success:function(data){//콜백함수, 서버에서 처리된 결과값이 data변수에 다시 저장
+					$("#div1").html(data);//div의 내용변경
+				}
+			});
+		}
+	});
+});
+</script>
+</head>
+<body>
+<h2>일반적인방식</h2>
+<form name="form1" action="result3.jsp">
+	키워드를 입력하세요<input type="text" name="search">
+	<input type="button" value="확인" onclick="check()">
+</form>
+
+<h2>비동기적 방식</h2>
+키워드를 입력하세요
+<input type="text" id="search">
+<div id="div1">검색결과 출력 영역</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js">
+</script>
+<script>
+$(function(){
+	$("#btnShow").click(function(){
+		$("#img1").show("fast");
+	});
+	$("#btnHide").click(function(){
+		$("#img1").hide("fast");
+	});
+	$("#btnToggle").click(function(){
+		$("#img1").toggle("fast");
+	});
+	$("#btnAnimate").click(function(){
+		$("#img1").animate({
+			width:'50%',
+			height:'50%',
+			opacity:'0.5'
+		}, 5000);//5초동안
+	});
+	$("#btnFadein").click(function(){
+		$("#img1").fadeIn(5000,function(){
+			$("#img2").fadeIn("slow");
+		});
+	});
+	$("#btnFadeout").click(function(){
+		$("#img1").fadeOut("slow");
+	});
+	$("#btnSlidedown").click(function(){
+		$("#img1").slideDown("slow");
+	});
+	$("#btnSlideup").click(function(){
+		$("#img1").slideUp("slow");
+	});
+	$("#btnChain").click(function(){
+		$("#img1").show().fadeOut("slow").slideDown("slow");
+	});
+});
+</script>
+<style>
+#img1 { display:block; position : relative; }
+#img2 { display:none; }
+</style>
+</head>
+<body>
+<button id="btnShow">표시</button>
+<button id="btnHide">숨김</button>
+<button id="btnToggle">toggle</button>
+<button id="btnAnimate">애니메이션</button>
+<button id="btnFadein">페이드인</button>
+<button id="btnFadeout">페이드아웃</button>
+<button id="btnSlidedown">slide down</button>
+<button id="btnSlideup">slide up</button>
+<button id="btnChain">여러 효과</button>
+<hr>
+<img id="img1" src="../images/spring.jpg">
+<img id="img2" src="../images/summer.jpg">
+</body>
+</html>

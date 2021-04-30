@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js">
+</script>
+<script>
+$(function(){
+	$("input").focus(function(){//입력포커스를 받을때
+		$(this).css("background-color","yellow");
+		$(this).css("border","3px dotted red");
+	});
+	$("input").blur(function(){//포커스를 잃을때
+		$(this).css("background-color","white");
+		$(this).css("border","1px solid black");
+	});
+});
+</script>
+</head>
+<body>
+아이디 <input type="text" name="name">
+</body>
+</html>

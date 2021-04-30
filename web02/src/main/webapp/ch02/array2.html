@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열</title>
+<script type="text/javascript">
+now=new Date();
+day=now.getDay();//요일코드 일요일~토요일 0~6
+document.write("요일코드 :"+day+"<br>");
+//배열 생성
+yoil=new Array("일","월","화","수","목","금","토");
+document.write("오늘은 "+yoil[day]+"요일입니다.<br>");
+imgYoil=new Array("sun.gif","mon.gif","tue.gif","wed.gif","thu.gif","fir.gif",
+		"sat.gif");
+		document.write("오늘은 <img src='../images/"+imgYoil[day]+"'>요일입니다.<br>");
+		for(i=0; i<imgYoil.length; i++){
+			document.write(yoil[i]+"요일 "+"<img src='../images/"+imgYoil[i]+"'><br>");
+		}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

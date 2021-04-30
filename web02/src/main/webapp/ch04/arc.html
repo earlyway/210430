@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body{margin:0;}
+</style>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="200"></canvas>
+<script>
+var canvas=document.getElementById("myCanvas");
+var context=canvas.getContext("2d");
+context.beginPath();
+	  //arc(x,y,반지름,시작각도,끝각도,반시계방향 여부)
+context.arc(100,100,80,0,1.0*Math.PI,false);
+context.fillStyle="red";
+context.fill();
+
+context.beginPath();
+context.arc(100,100,60,0,1.5*Math.PI,false);
+context.fillStyle="blue";
+context.fill();
+
+context.beginPath();
+context.arc(100,100,40,0,1.5*Math.PI,false);
+context.fillStyle="green";
+context.fill();
+</script>
+
+</body>
+</html>

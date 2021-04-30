@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function checkNotEmpty(field){
+	if(field.value==""){
+		alert("필드가 비었습니다.");
+		field.focus();
+		return false;
+	}
+	var s=field.value;
+	if(s.length >=6 && s.length<=8){
+		return true;
+	}else{
+		alert("이름은 6~8자 이내로 입력하세요.");
+		field.focus();
+		return false;
+	}
+	return true;
+}
+</script>
+</head>
+<body>
+이름 :
+<input type="text" id="user">
+<input type="button"
+	onclick="checkNotEmpty(document.getElementById('user'))" value="확인">
+
+</body>
+</html>

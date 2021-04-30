@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js">
+</script>
+<script>
+	$(function(){
+		$("#text").click(function(){
+			$("#target").text("<marquee>변경된 내용입니다.</marquee>");
+			alert($("#target").text());
+		});
+		$("#html").click(function(){
+			$("#target").html("<marquee>변경된 내용입니다.</marquee>");
+			alert($("#target").html());
+		});
+	});
+</script>
+</head>
+<body>
+	<h2>jQuery를 이용한 DOM 변경</h2>
+	<p id="target">
+	이것은 <strong>하나의</strong> 단락입니다.
+	</p>
+	<button id="text">버튼1</button>
+	<button id="html">버튼2</button>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js">
+	
+</script>
+<script>
+	$(function() {
+		$("#button1").click(
+				function() {
+					var color = $("#div1").css("background-color");//태그의 css 속성확인
+					var width = $("#div1").css("width");
+					var height = $("#div1").css("height");
+					$("#result").html(
+							"배경색상:" + color + "<br>" + "가로:" + width + "<br>"
+									+ "세로:" + height + "<br>");
+				});
+		$("#button2").click(function() {
+			$("#div1").css("background-color", "red");//태그의 css 속성변경
+			$("#div1").css("width", "200px");
+			$("#div1").css("height", "200px");
+		});
+		$("#button3").click(function() {
+			$("#div2").addClass("class1");//id가 div2인 태그추가
+		});
+	});
+</script>
+<style>
+div#div1 {
+	width: 60px;
+	height: 60px;
+}
+
+.class1 {
+	border: 1px solid red;
+	background-color: yellow;
+	width: 60px;
+	height: 60px;
+}
+</style>
+</head>
+<body>
+	<div id="div1" style="background-color: blue;"></div>
+	<div id="div2">두번째 div</div>
+	<button id="button1">버튼1</button>
+	<button id="button2">버튼2</button>
+	<button id="button3">클래스 추가</button>
+	<p id="result">결과표시</p>
+</body>
+</html>

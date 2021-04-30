@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	function mouseIn(obj){
+		obj.style.border="2px solid red";
+		obj.style.fontSize="30px";
+	}
+	function mouseOut(obj){
+		obj.style.border="";
+		obj.style.fontSize="12px";
+	}
+</script>
+</head>
+<body>
+<!-- onmouseover 마우스커서가 올라갈때 -->
+<div style="background-color:yellow; width:200px;"
+onmouseover="mouseIn(this)" onmouseout="mouseOut(this)">마우스이벤트</div>
+</body>
+</html>

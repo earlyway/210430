@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+ src = "http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+	$(function() {
+		$("img").bind({
+			mouseout : function() {
+				$("img").attr("src", "../images/spring.jpg");
+			},
+			mouseover : function() {
+				$("img").attr("src", "../images/summer.jpg");
+			},
+			click : function() {
+				$("img").attr("src", "../images/winter.jpg");
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<img src="../images/fall.jpg">
+</body>
+</html>

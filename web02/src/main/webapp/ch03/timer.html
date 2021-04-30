@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var timer;//전역 변수
+function test(){
+	alert("test 함수 호출...");
+}
+function showAlert(){
+	timer=setInterval("test()",1000);//반복 호출 타이머
+}
+function stopAlert(){
+	clearInterval(timer);//타이머 초기화
+}
+</script>
+</head>
+<body>
+<p>버튼을 누르세요</p>
+<button onclick="showAlert()">타이머 시작</button>
+<button onclick="stopAlert()">타이머 멈춤</button>
+
+</body>
+</html>

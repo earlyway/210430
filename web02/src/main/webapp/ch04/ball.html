@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+canvas{background-color:yellow;
+		border:1px dotted black;}
+</style>
+<script>
+var context;
+var dx=5;
+var dy=5;
+var y=100;
+var x=100;
+function draw(){
+	var canvas=document.getElementById("myCanvas");
+	var context=canvas.getContext("2d");
+	context.clearRect(0,0,300,200);//사각 영역 클리어
+	context.beginPath();//경로 초기화
+	context.fillStyle="red";//색상 설정
+	context.arc(x,y,10,0,Math.PI*2, true);
+	context.closePath();
+	context.fill();
+	if(x<(0+10)||x>(300-10)){ //좌우 벽에 맞으면
+		dx=-dx; //x축의 이동방향 바꾸기
+	}
+	if(y<(0+10)||y>(200-10)){ //상하 벽에 맞으면
+		dy=-dy; //y축의 이동방향 바꾸기
+	}
+	x+=dx;//x좌표 변경
+	y+=dy;//y좌표 변경
+}
+setInterval(draw,10);//반복실행 타이머 설정
+function change(){ //폼에 입력한 x,y축 이동거리 값 처리
+	dx=parseInt(document.getElementById("hSpeed").value);
+	dy=parseInt(document.getElementById("vSpeed").value);
+}
+</script>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="200"></canvas>
+<form id="form1">
+x축 이동거리<input type="number" id="hSpeed" value="5" min="1" max="10">
+y축 이동거리<input type="number" id="vSpeed" value="5" min="1" max="10">
+	<input type="button" value="확인"
+	onclick="change()">
+</form>
+
+</body>
+</html>

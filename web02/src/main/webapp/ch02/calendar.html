@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>달력 만들기</title>
+<script type="text/javascript">
+var date=new Date();//날짜 객체
+var y=date.getFullYear();//연도
+var m=date.getMonth();//월
+var d=date.getDate();//일
+var theDate=new Date(y,m,1);//해당 날짜의 객체 생성
+var theDay=theDate.getDay();//요일 코드
+
+var last=[31,28,31,30,31,30,31,31,30,31,30,31];//월별 일수 배열
+
+if(y%4&&y%100!=0||y%400==0) lastDate=last[1]=29;//윤달 처리
+var lastDate=last[m];
+var row=Math.ceil((theDay+lastDate)/7);//필요한 행 수 계산
+document.write("<h1>"+y+"."+(m+1)+"</h1>");
+var calendar="<table border='1'>";
+calendar+="<tr>";
+calendar+="<th>일</th>";
+calendar+="<th>월</th>";
+calendar+="<th>화</th>";
+calendar+="<th>수</th>";
+calendar+="<th>목</th>";
+calendar+="<th>금</th>";
+calendar+="<th>토</th>";
+calendar+="</tr>";
+
+var dNum=1;
+for(var i=1; i<=row; i++){
+	calendar+="<tr>";
+	for(var k=1; k<=7; k++){
+		if(i==1 &&k<=theDay||dNum>lastDate){//빈칸 처리
+			calendar+="<td>&nbsp;</td>";
+		}else {
+			calendar+="<td>"+dNum+"</td>";
+			dNum++;
+		}
+	}
+	calendar+="</tr>";
+}
+calendar+="</table>";
+document.write(calendar);
+</script>
+</head>
+<body>
+
+</body>
+</html>

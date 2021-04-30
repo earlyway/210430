@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+	//id가 button1인 태그를 클릭하면
+	$("#button1").click(function(){
+		//id가 dan인 태그에 입력한 value
+		var dan=$("#dan").val();
+		//비동기식 호출(백그라운드에서 실행되는 코드)
+		//url : 호출할 페이지주소, data:전달할 값, success:서버에서 처리가 완료된 후 실행할 코드(콜백함수)
+		$.ajax({
+			type : "post",
+			url:"result1.jsp",
+			data:"dan="+dan,
+			success:function(data){
+				//id가 result인 태그의 내부영역에 결과가 출력됨
+				$("#result").html(data);
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+<h2>동기식</h2>
+<form action="result1.jsp">
+단을 입력하세요
+<input type="text" name="dan">
+<input type="submit" value="확인">
+</form>
+
+<h2>비동기식</h2>
+단을 입력하세요
+<input type="text" id="dan">
+<input type="button" id="button1" value="확인">
+<div id="result">결과 출력 영역</div>
+</body>
+</html>
+
+
+

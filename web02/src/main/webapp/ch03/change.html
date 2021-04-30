@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function get(){
+		var val=document.getElementById("ex").innerHTML;
+		alert(val);
+	}
+	function set(v){
+		document.getElementById("ex").innerHTML=v;
+	}
+	function cangeImage(){
+		var img=document.getElementById("image");
+		img.src="..images/spring.jpg";
+		img.style.width="50px";
+		img.style.height="50px";
+	}
+	function changeStyle(){
+		var ex=document.getElementById("ex");
+		ex.style.color="red";
+		ex.style.backgroundColor="yellow";
+		ex.style.fontSize="30px";
+		ex.style.fontFamily="궁서체";
+		ex.style.fontStyle="italic";
+	}
+	function show(){
+		document.getElementById("image").style.visibility="visible";
+	}
+	function hide(){
+		document.getElementById("image").style.visibility="hidden";
+	}
+</script>
+<style>
+#ex {
+	background-color:blue;
+	font-family:"굴림체";
+	font-size:50px;
+}
+</style>
+</head>
+<body>
+	<div id="ex">div 영역</div>
+	<a href="#" onclick="get()">div의 내용</a>
+	<a href="#" onclick="set('변경되었습니다.')">div 변경</a>
+	<br>
+	<img id="image" src="..images/winter.jpg">
+	<input type="button" value="이미지 변경" onclick="changeImage()">
+	<input type="button" value="이미지 숨김" onclick="hide()">
+	<input type="button" value="이미지 표시" onclick="show()">
+	<br>
+	<input type="button" value="글자 스타일 변경" onclick="changeStyle()">
+</body>
+</html>

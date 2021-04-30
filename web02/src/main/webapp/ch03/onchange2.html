@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function imgView() {
+		var img = document.getElemetById("img");
+		var div1 = document.getElementById("div1");
+		div1.innerHTML = "<img src="+img.value+">";
+	}
+</script>
+</head>
+<body>
+	<table style="width: 400px; background-color: orange">
+		<tr align="center" valign="middle">
+			<td width="150px" bgcolor="gold">그림을 선택하세요<br> 
+			<select id="img" size="4" onchange="imgView()">
+					<option value="../images/spring.jpg">행이</option>
+					<option value="../images/summer.jpg">복이</option>
+					<option value="../images/fall.jpg">행이</option>
+					<option value="../images/winter.jpg">왕비</option>
+			</select>
+			</td>
+			<td bgcolor="pink">
+				<div id="div1">
+					<img src="../images/spring.jpg>
+				</div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

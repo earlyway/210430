@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js">
+</script>
+<script>
+$(function(){
+	//json 파일의 내용을 읽어서 처리하는 함수
+	$.getJSON("student.json", function(data,textStatus){
+		//테이블에 내용추가
+		console.log("data:"+data);
+		console.log("textStatus:"+textStatus);
+		$("#students").append(
+				"<tr><td>번호</td><td>이름</td><td>전화</td></tr>");
+		//배열의 세부 아이템을 반복처리하는 코드
+		$.each(data, function(){
+			$("#students").append(
+					"<tr><td>"+this.num+"</td>"
+					+"<td>"+this.name+"</td>"
+					+"<td>"+this.tel+"</td></tr>");
+		});
+	});
+});
+</script>
+</head>
+<body>
+<table id="students" style="width:500px;" border="1">
+</table>
+
+</body>
+</html>

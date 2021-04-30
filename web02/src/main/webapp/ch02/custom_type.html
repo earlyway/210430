@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//자바스크립트 객체 {key : value}
+var myCar={
+		maker:"BMW", model : "X5",
+		year : 2013, speed : 60,
+		speedDown:function(){this.speed-=10;}, //함수
+		speedUp:function(){this.speed+=10;}
+};
+myCar.speedUp();//함수 호출
+document.write( myCar["speed"]+"<br>");//객체["변수"]
+document.write( myCar["maker"]+"<br>");
+document.write( myCar["model"]+"<br>");
+document.write( myCar["year"]+"<br>");
+document.write( myCar.maker+"<br>");//객체.변수
+document.write( myCar.model+"<br>");
+document.write( myCar.year+"<br>");
+txt="";
+for(var x in myCar){
+	txt+=myCar[x]+" ";
+}
+document.write(txt);
+</script>
+</head>
+<body>
+
+</body>
+</html>

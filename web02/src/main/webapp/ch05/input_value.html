@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js">
+</script>
+<script>
+	$(function(){
+		$("#button1").click(function(){
+			var name=$("#name").val();//var name=documentElementById("name").value; 가 대체된 문장임.
+			alert(name);
+			name=prompt("이름을 입력하세요.","아무개");
+			$("#name").val(name);
+				$("#img1").attr("src","../images/spring.jpg");
+				$("#img1").attr({
+					"width":"300px",
+					"height":"300px"
+				});
+				
+				$("#img1").attr("width","400px");
+				$("#img1").attr("height","300px");
+				var img=$("#img1").attr("src");
+		});
+	});
+	function check(){
+		var name=document.getElementById("name").value;
+		alert(name);
+	}
+</script>
+</head>
+<body>
+이름 :<input id="name" value=""><br>
+<img id="img1" src="../images/summer.jpg"><br>
+<button id="button1">확인</button>
+</body>
+</html>

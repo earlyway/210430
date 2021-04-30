@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="test">this is a heading</h1>
+<script>
+//getElementById("태그의id")
+	function func(){
+		var e = document.getElementById("test");
+		e.style.color="red";//태그의 글자색을 변경
+		e.style.backgroundColor="yellow";//태그의 배경색을 변경
+	}
+	function func2(){
+		var g = document.getElementById("test");
+		g.style.color="black";//태그의 글자색을 변경
+		g.style.backgroundColor="white";//태그의 배경색을 변경
+	}
+	</script>
+<button type="button" onclick="func()">클릭하세요!</button>
+<button type="button" onclick="func2()">초기화</button>
+</body>
+</html>

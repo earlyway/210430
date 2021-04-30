@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var fruits=new Array();//배열 선언
+fruits["0"]="사과";//인덱스는 0부터
+fruits["1"]="바나나";
+fruits["2"]="오렌지";
+for(i=0; i<fruits.length; i++){//length 배열 데이터의 개수
+	document.write(fruits[i]+"<br>");
+}
+for(var f in fruits){
+	document.write(fruits[f]+"<br>");
+}
+document.write(fruits["0"]+"<br>");
+document.write(fruits["1"]+"<br>");
+document.write(fruits["2"]+"<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

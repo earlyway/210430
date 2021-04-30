@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style> body{margin:0;}</style>
+<script>
+	function test(){
+		var canvas=document.getElementById("myCanvas");
+		var context=canvas.getContext("2d");
+		context.setLineDash([5,2]);//[선 굵기, 공백크기]
+		context.strokeStyle="green";//색상설정
+		context.beginPath();//경로 초기화
+		context.moveTo(0,0);//좌표 이동
+		context.lineWidth=20;//선 두께
+		context.lineTo(100,100);//선의 끝점
+		context.stroke();	//선 그리기
+		context.beginPath();
+		context.moveTo(100,100);
+		context.strokeStyle="red";
+		context.lineWidth=10;
+		context.lineTo(150,50);
+		context.lineTo(200,100);
+		context.stroke();
+	}
+</script>
+</head>
+<body onload="test()"><!-- 페이지로딩이 끝나면 test()함수 호출! 호출 후 펑션스크립트를 실행하게됨. -->
+<canvas id="myCanvas" width="300" height="200"></canvas>
+</body>
+</html>

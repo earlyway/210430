@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<script>
+var canvas=document.getElementById("myCanvas");
+var context=canvas.getContext("2d");
+var image=new Image();//이미지 객체를 만들고
+image.src="../images/spring.jpg";//이미지의 소스경로 시정
+//이미지를 읽으면 실행할 함수
+image.onload=function(){
+	context.drawImage(image,0,0);//이미지를 0,0 좌표에 출력
+};
+</script>
+</body>
+</html>
